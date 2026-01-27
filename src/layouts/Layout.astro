@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { StarsBackground } from "@/components/animate-ui/components/backgrounds/stars";
 ---
 
 <!doctype html>
@@ -10,9 +11,10 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>mapas48</title>
 	</head>
 	<body>
+		<StarsBackground className="absolute -z-10 top-0" client:only />
 		<slot />
 	</body>
 </html>

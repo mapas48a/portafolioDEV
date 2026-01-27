@@ -2,41 +2,227 @@
 import Github from "../icons/github.astro";
 import Linkedin from "../icons/linkedin.astro";
 import Instagram from "../icons/instagram.astro";
-
-import { Font } from "astro:assets";
+import Tailwind from "@/icons/tailwind.astro";
+import Astroicon from "@/icons/astroicon.astro";
+import Nodejs from "@/icons/nodejs.astro";
+import Nextjs from "@/icons/nextjs.astro";
+import Reacticon from "@/icons/reacticon.astro";
 ---
 
-<Font cssVariable="--font-pacifico" />
+<section
+  id="hero"
+  class="relative flex justify-center px-6 mt-5"
+>
+  <!-- Nebula Glow Effect -->
+  <div
+    class="absolute inset-0 flex items-center justify-center pointer-events-none"
+  >
+    <div class="nebula-glow"></div>
+  </div>
 
-<section id="hero" class="flex justify-between max-w-7xl mx-auto">
-	<div>
-		<h1 class="text-4xl font-semibold">Haciendo webs que cambian la vida</h1>
-		<div class="border-b-2 border-gray-800 rounded-sm"></div>
-		<h2 class="text-2xl font-semibold">Jonathan Sanchez Guerrero</h2>
-		<div class="">
-			<p>Desarrollador web y desarrollador de juegos con experiencia en el desarrollo de aplicaciones</p>
-			<p>
-				<span class="web-modernas p-1 mr-2 bg-blue-600/20 rounded shadow shadow-cyan-100">
-					web modernas
-				</span>
-				<span class="responsivas p-1 bg-blue-600/20 rounded shadow shadow-cyan-100">
-					responsivas
-				</span>
-			</p>
-		</div>
-	</div>
-	<div class="flex flex-col gap-2">
-		<a href="#" class="p-2 h-10 w-10 border-white bg-gray-300/20 border rounded-sm shadow"> <Github /> </a>
-		<a href="#" class="p-2 h-10 w-10 border-white bg-gray-300/20 border rounded-sm shadow"> <Linkedin /> </a>
-		<a href="#" class="p-2 h-10 w-10 border-white bg-gray-300/20 border rounded-sm shadow"> <Instagram /> </a>
-	</div>
+  <!-- Main Content Container -->
+  <div class="relative z-10 max-w-5xl">
+    <!-- Glassmorphic Card -->
+    <div
+      class="glass-card backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl"
+    >
+      <!-- Availability Badge -->
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-400/30 mb-8"
+      >
+        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+        <span class="text-sm font-medium text-emerald-300"
+          >Disponible para nuevos proyectos</span
+        >
+      </div>
+
+      <!-- Name -->
+      <h2 class="text-2xl md:text-3xl font-semibold text-white/90 mb-6">
+        Jonathan Sanchez Guerrero
+      </h2>
+
+      <!-- Main Headline with Gradient -->
+      <h1
+        class="headline-gradient text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-wrap"
+      >
+        Desarrollando aplicaciones web
+		<span class=" bg-blue-200/30 text-5xl px-2 rounded-sm">Increíbles</span>
+      </h1>
+
+      <!-- Subheadline with Tech Stack -->
+      <p class="text-lg md:text-xl text-white/70 mb-4 max-w-3xl">
+        Desarrollador Full Stack especializado en crear aplicaciones web
+        modernas y juegos interactivos.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mb-12">
+        <span
+          class="tech-badge px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-lg text-blue-200 text-sm font-medium"
+        >
+          <Reacticon />
+        </span>
+        <span
+          class="tech-badge px-4 py-2 bg-purple-500/20 border border-purple-400/30 rounded-lg text-purple-200 text-sm font-medium"
+        >
+         <Nextjs />
+        </span>
+        <span
+          class="tech-badge px-4 py-2 bg-green-500/20 border border-green-400/30 rounded-lg text-green-200 text-sm font-medium"
+        >
+          <Nodejs />
+        </span>
+        <span
+          class="tech-badge px-4 py-2 bg-cyan-500/20 border border-cyan-400/30 rounded-lg text-cyan-200 text-sm font-medium"
+        >
+          <Tailwind />
+        </span>
+        <span
+          class="tech-badge px-4 py-2 bg-orange-500/20 border border-orange-400/30 rounded-lg text-orange-200 text-sm font-medium"
+        >
+          <Astroicon />
+        </span>
+      </div>
+
+      <!-- CTAs and Social Links -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+        <!-- Primary CTA -->
+        <a
+          href="#contact"
+          class="cta-primary group relative px-8 py-4 bg-linear-to-r from-blue-500 to-purple-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
+        >
+          <span class="relative z-10">Ver Proyectos</span>
+          <div
+            class="absolute inset-0 rounded-xl bg-linear-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 blur transition-opacity duration-300"
+          >
+          </div>
+        </a>
+
+        <!-- Secondary CTA -->
+        <a
+          href="#about"
+          class="cta-secondary px-8 py-4 border-2 border-white/20 rounded-xl font-semibold text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+        >
+          Contactar
+        </a>
+
+        <!-- Social Links -->
+        <div class="flex gap-4 ml-0 sm:ml-auto">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link p-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-110"
+          >
+            <Github />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link p-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-110"
+          >
+            <Linkedin />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link p-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-110"
+          >
+            <Instagram />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
-	.web-modernas {
-		font-family: var(--font-pacifico);
-	}
-	.responsivas {
-		font-family: var(--font-pacifico);
-	}
+  /* Nebula Glow Effect */
+  .nebula-glow {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.15) 0%,
+      rgba(139, 92, 246, 0.1) 30%,
+      transparent 70%
+    );
+    filter: blur(60px);
+    animation: pulse-glow 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+  }
+
+  /* Glassmorphic Card */
+  .glass-card {
+    animation: fade-in-up 1s ease-out;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Gradient Text Effect */
+  .headline-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c7d2fe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 6s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes gradient-shift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Tech Badge Hover Effect */
+  .tech-badge {
+    transition: all 0.3s ease;
+  }
+
+  .tech-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Social Link Icons */
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .headline-gradient {
+      font-size: 2.5rem;
+    }
+  }
 </style>
