@@ -38,6 +38,15 @@ pnpm astro add tailwindcss
 └── package.json
 ```
 
+## Utilizando Shadcn y Animate UI
+
+Con estos componentes puedes crear animaciones y estilos para tu portafolio.
+
+[Shadcn](https://ui.shadcn.com/)
+
+[Animate UI](https://animate-ui.vercel.app/)
+
+
 ## comandos para iniciar el proyecto
 
 Todos los comandos se ejecutan desde la raiz del proyecto, desde un terminal:
