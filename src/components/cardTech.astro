@@ -1,0 +1,35 @@
+---
+interface Tech {
+    name: string;
+    Icon: any;
+}
+const { tech, title, className } = Astro.props;
+const stylespan = "p-1 bg-white/20 rounded border border-white/20 shadow-sm";
+---
+
+<div
+    class={`
+            w-full
+            h-full
+            bg-linear-to-r from-gray-900/95 to-black/20
+            border
+            rounded-lg
+            ${className}
+            `}
+>
+    <p class="mb-3 p-2 text-2xl font-bold ml-2 text-gray-300">{title}</p>
+    <div
+        class="m-2 max-w-fit mx-auto grid grid-cols-3 grid-rows-auto place-items-center gap-2"
+    >
+        {
+            tech.map((tech: Tech) => {
+                const { Icon } = tech;
+                return (
+                    <span class={stylespan}>
+                        <Icon class="h-12 w-12" />
+                    </span>
+                );
+            })
+        }
+    </div>
+</div>
