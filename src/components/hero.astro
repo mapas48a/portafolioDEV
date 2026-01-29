@@ -7,6 +7,7 @@ import Astroicon from "@/icons/astroicon.astro";
 import Nodejs from "@/icons/nodejs.astro";
 import Nextjs from "@/icons/nextjs.astro";
 import Reacticon from "@/icons/reacticon.astro";
+import { ArrowBigDown } from "lucide-react";
 ---
 
 <section id="hero" class="relative flex justify-center px-6 mt-5">
@@ -130,6 +131,13 @@ import Reacticon from "@/icons/reacticon.astro";
           </a>
         </div>
       </div>
+    </div>
+    <div class="text-white text-4xl absolute -bottom-50 left-1/2">
+      <a href="#tech">
+        <ArrowBigDown
+          className="h-20 w-20 animate-bounce p-2 rounded bg-white/10 border border-white/20"
+        />
+      </a>
     </div>
   </div>
 </section>

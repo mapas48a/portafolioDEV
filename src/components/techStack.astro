@@ -5,33 +5,86 @@ import {
     techDataIWantLearn,
 } from "@/lib/techData";
 import CardTech from "./cardTech.astro";
+import { TypingText } from "./animate-ui/primitives/texts/typing";
+import { Magnetic } from "./animate-ui/primitives/effects/magnetic";
+import { MorphingText } from "./animate-ui/primitives/texts/morphing";
+
+const texts = [
+    "construir cosas increibles 🔥",
+    "crear proyectos increíbles 🚀",
+    "muchisimas ganas de aprender nuevas tecnologías ✨",
+    "amante de la programacion 👨‍💻",
+];
 ---
 
-<section class="bg-black h-full text-white">
+<section class="bg-black h-full text-white" id="tech">
     <div class="flex items-center justify-evenly h-full w-full gap-2">
-        <div class="flex flex-col items-center justify-evenly h-full">
-            <h2 class="text-4xl font-bold mt-5 text-balance">
-                las tecnologías que uso en mi dia a dia
-            </h2>
-            <p class="text-balance">para construir proyectos increíbles</p>
+        <div class="flex flex-col items-center justify-start w-[60%] gap-5">
+            <!-- TODO: Agregar un array de string -->
+            <TypingText
+                text="las tecnologías que uso en mi dia a dia"
+                className="text-4xl font-bold mt-5 text-balance"
+                client:visible
+            />
+            <div class="text-balance text-lg">
+                <p>
+                    Con pasion y dedicacion ya tengo mas de
+                    <span
+                        class={`
+                    p-2
+                    text-2xl
+                    font-bold
+                    bg-linear-to-r
+                    from-gray-400
+                    to-gray-600
+                    text-transparent
+                    bg-clip-text
+                    `}
+                    >
+                        1 AÑO
+                    </span>
+                    de experiencia
+                </p>
+                <p>
+                    he cometido errores y aprendido de ellos para mejorar y
+                    crecer
+                </p>
+                <p>cada proyecto es una oportunidad para aprender algo nuevo</p>
+                <p>y lograr cosas increibles.</p>
+            </div>
+            <MorphingText
+                text={texts}
+                loop={true}
+                delay={3000}
+                className="text-balance text-3xl text-bold "
+                client:visible
+            />
         </div>
 
         <div class="grid grid-cols-2 grid-rows-auto gap-2">
             {/* Tecnologias que manejos */}
-            <CardTech tech={techDataIKnow} title="tecnologias que manejos" />
+            <Magnetic client:visible>
+                <CardTech
+                    tech={techDataIKnow}
+                    title="tecnologias que manejos"
+                />
+            </Magnetic>
 
             {/* Tecnologias que blandas */}
-            <CardTech
-                tech={techDataISecondary}
-                title="tecnologias que blandas"
-            />
+            <Magnetic client:visible>
+                <CardTech
+                    tech={techDataISecondary}
+                    title="tecnologias que blandas"
+                />
+            </Magnetic>
 
             {/* Tecnologias que quiero aprender */}
-            <CardTech
-                tech={techDataIWantLearn}
-                title="tecnologias que quiero aprender"
-                className="col-span-2"
-            />
+            <Magnetic client:visible className="col-span-2">
+                <CardTech
+                    tech={techDataIWantLearn}
+                    title="tecnologias que quiero aprender"
+                />
+            </Magnetic>
         </div>
     </div>
 </section>
